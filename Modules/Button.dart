@@ -10,15 +10,19 @@ class Button extends Module {
   ButtonText text;
 
   @override
-  String Solve(Edgework edgework) {
-    if (toTap(edgework)) return 'Tap the button';
+  void Solve(Edgework edgework) {
+    if (toTap(edgework)) {
+      print('Tap the button');
+      return;
+    }
 
     print('Hold the button, and enter the colour of the strip here: ');
 
     Colour colour = Colour.values.firstWhere(
         (colour) => colour.toString().split('.').last == stdin.readLineSync());
 
-    return 'Release when the countdown timer has a ${getStrip(colour)} in any position';
+    print(
+        'Release when the countdown timer has a ${getStrip(colour)} in any position');
   }
 
   bool toTap(Edgework edgework) {
