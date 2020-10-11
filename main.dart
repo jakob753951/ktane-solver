@@ -7,7 +7,8 @@ main() {
   Batteries batteries = Batteries.fromString('1B1H');
   List<Indicator> indicators = [
     Indicator.fromString('FRK*'),
-    Indicator.fromString('SND*')
+    Indicator.fromString('SND*'),
+    Indicator.fromString('CAR')
   ];
   String serial = 'QE2EZ4';
   List<PortPlate> portPlates = [
@@ -19,6 +20,8 @@ main() {
   Edgework edgework = Edgework(batteries, indicators, serial, portPlates);
 
   Bomb bomb = Bomb(edgework);
+
+  print(bomb.edgework);
 
   bomb.modules.add(Wires('BBKR'));
   bomb.modules.add(Button(Colour.Red, ButtonText.Detonate));
