@@ -26,8 +26,12 @@ class Edgework {
       int.parse(serial[serial.lastIndexOf(RegExp('[0-9]'))]);
 
   @override
-  String toString() =>
-      "$batteries // ${indicators.join(' ')} // $serial // ${portPlates.map((plateString) => '[$plateString]').join(' ')}";
+  String toString() => [
+        batteries,
+        indicators.join(' '),
+        serial,
+        portPlates.map((plateString) => '[$plateString]').join(' ')
+      ].join(' // ');
 }
 
 class Batteries {
@@ -72,8 +76,8 @@ class PortPlate {
 
   PortPlate.fromStringList(List<String> inStrings) {
     this.ports = inStrings
-        .map((portString) => Port.values
-            .firstWhere((port) => port.toString().split('.').last == portString))
+        .map((portString) => Port.values.firstWhere(
+            (port) => port.toString().split('.').last == portString))
         .toList();
   }
   PortPlate.fromPortList(this.ports);
