@@ -23,5 +23,5 @@ main() {
   bomb.modules.add(Wires('BBKR'));
   bomb.modules.add(Button(Colour.Red, ButtonText.Detonate));
 
-  bomb.modules.forEach((module) => print(module.Solve(bomb.edgework)));
+  bomb.modules.forEach((module) => module.Solve(bomb.edgework));
 }

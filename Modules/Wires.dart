@@ -7,7 +7,7 @@ class Wires extends Module {
   String wires;
 
   @override
-  String Solve(Edgework edgework) => 'Cut wire: ${wireToCut(edgework)}';
+  void Solve(Edgework edgework) => print('Cut wire: ${wireToCut(edgework)}');
 
   int wireToCut(Edgework edgework) {
     switch (this.wires.length) {
