@@ -2,8 +2,10 @@ import 'Module.dart';
 import 'Edgework.dart';
 
 class Bomb {
-  Bomb(this.edgework);
+  Bomb(this.edgework, this.modules);
 
   Edgework edgework;
-  List<Module> modules = new List<Module>();
+  List<Module> modules;
+
+  void solve() => modules.forEach((module) => module.solve(edgework));
 }

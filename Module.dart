@@ -5,5 +5,5 @@ abstract class Module {
 
   String name;
 
-  void Solve(Edgework edgework);
+  void solve(Edgework edgework);
 }

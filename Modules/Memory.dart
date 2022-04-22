@@ -2,14 +2,14 @@ import '../Edgework.dart';
 import '../Module.dart';
 
 class Memory extends Module {
+  int stage = 1;
+  late int display;
+  late List<int> buttons;
+
   Memory(this.stage) : super('Memory');
 
-  int stage;
-  int display;
-  List<int> buttons;
-
   @override
-  void Solve(Edgework edgework) {}
+  void solve(Edgework edgework) {}
 
   void solveStage() {}
 }

@@ -10,7 +10,7 @@ class Button extends Module {
   ButtonText text;
 
   @override
-  void Solve(Edgework edgework) {
+  void solve(Edgework edgework) {
     if (toTap(edgework)) {
       print('Tap the button');
       return;
